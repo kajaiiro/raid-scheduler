@@ -1,17 +1,14 @@
 import React from "react"
-import Header from "./Header/Header"
 import Footer from "./Footer/Footer"
+import Navigation from "./Navbar/Navbar"
 
-class Layout extends React.Component {
-  render(){
-    return (
-      <>
-        <Header />
-        <main>{this.props.children}</main>
-        <Footer />
-      </>
-    )
-  }
+function Layout() {
+  return (
+    <>
+      <Navigation />
+      <Footer />
+    </>
+  )
 }
 
 export default Layout;
