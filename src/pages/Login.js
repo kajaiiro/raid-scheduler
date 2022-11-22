@@ -23,7 +23,7 @@ function Login() {
 
     </Form>
     
-    <Link to="/register"><Button>Register</Button></Link> 
+    <Link to="/register"><Button variant="link">Register</Button></Link> 
     </>
     )
 }
