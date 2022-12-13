@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom"
 import Button from "react-bootstrap/Button"
 import Form from "react-bootstrap/Form"
+import Container from 'react-bootstrap/Container';
 
 function Login() {
     return (
-    <>
+    <Container>
     <Form>
 
       <Form.Group className="mb-3">
@@ -24,7 +25,7 @@ function Login() {
     </Form>
     
     <Link to="/register"><Button variant="link">Register</Button></Link> 
-    </>
+    </Container>
     )
 }
 
