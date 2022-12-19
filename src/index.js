@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from "react-router-dom";
 import './index.css';
-import App from './App';
+import Router from './Router';
 // import Layout from './components/Layout/Layout';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -14,7 +14,7 @@ ReactDOM.render(
   <BrowserRouter>
     {/* <Layout> */}
     <Navigation />
-      <App />
+      <Router />
     <Footer />
     {/* </Layout> */}
   </BrowserRouter>,
