@@ -1,16 +1,13 @@
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
-import { Link } from "react-router-dom"
-import Button from "react-bootstrap/Button"
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Table from 'react-bootstrap/Table';
 
 // db
 import axios from "axios"
-import { useEffect, useState } from "react";
+import useState  from "react";
 import { useNavigate } from "react-router-dom";
 
 function Event() {
@@ -28,7 +25,6 @@ function Event() {
         event.preventDefault();
 
         axios.post('http://localhost/react-crud-php-api-mysql/api/users', inputs).then(function(response){
-        // axios.post('https://6397015f86d04c763387a39a.mockapi.io/users', inputs).then(function(response){
             console.log(response.data);
             navigate('/event');
         });

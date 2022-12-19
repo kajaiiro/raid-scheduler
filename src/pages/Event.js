@@ -1,5 +1,3 @@
-import Calendar from 'react-calendar'
-import 'react-calendar/dist/Calendar.css';
 import { Link } from "react-router-dom"
 import Button from "react-bootstrap/Button"
 
@@ -11,7 +9,6 @@ import Table from 'react-bootstrap/Table';
 // db
 import axios from "axios"
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 function Event() {
     const [users, setUsers] = useState([]);
@@ -21,7 +18,6 @@ function Event() {
 
     function getUsers() {
         axios.get('http://localhost/react-crud-php-api-mysql/api/').then(function(response) {
-        // axios.get('https://6397015f86d04c763387a39a.mockapi.io/users/').then(function(response) {
             console.log(response.data);
             setUsers(response.data);
         });
@@ -29,7 +25,6 @@ function Event() {
 
     const deleteUser = (id) => {
         axios.delete(`http://localhost/react-crud-php-api-mysql/api/${id}`).then(function(response){
-        // axios.delete(`https://6397015f86d04c763387a39a.mockapi.io/users/${id}`).then(function(response){
             console.log(response.data);
             getUsers();
         });
@@ -40,8 +35,11 @@ function Event() {
         <Row>
 
             <Col>
-            <h4>Upcoming Raids</h4>
+            <h4>
+            Upcoming Raids {' '}
             <Link to="/event/new"><Button>Add Event</Button></Link>
+            </h4>
+            
             <Table striped bordered hover>
                 <thead>
                     <tr>
