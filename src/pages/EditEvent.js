@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import userEvent from "@testing-library/user-event";
 
 export default function EditEvent() {
     const navigate = useNavigate();
@@ -12,12 +11,12 @@ export default function EditEvent() {
 
     useEffect(() => {
         getUser();
-    }, );
+        // eslint-disable-next-line
+    }, []);
 
     function getUser() {
         axios.get(`http://localhost/react-crud-php-api-mysql/api/${id}`).then(function(response) {
-        // axios.get(`https://6397015f86d04c763387a39a.mockapi.io/users/${id}`).then(function(response) {
-            console.log(response.data);
+            console.table(response.data);
             setInputs(response.data);
         });
     }
@@ -32,7 +31,6 @@ export default function EditEvent() {
         event.preventDefault();
 
         axios.put(`http://localhost/react-crud-php-api-mysql/api/${id}`, inputs).then(function(response){
-        // axios.put(`https://6397015f86d04c763387a39a.mockapi.io/users/${id}`, inputs).then(function(response){
             console.log(response.data);
             navigate('/event');
         });
