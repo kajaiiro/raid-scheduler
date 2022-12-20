@@ -7,10 +7,10 @@ import Col from 'react-bootstrap/Col';
 
 // db
 import axios from "axios"
-import useState  from "react";
+import { useState }  from "react";
 import { useNavigate } from "react-router-dom";
 
-function Event() {
+export default function NewEvent() {
 
     const navigate = useNavigate();
 
@@ -35,9 +35,7 @@ function Event() {
         <Container>
         <Row>
             <Col>
-            <Calendar />
-               
-        <div>
+            <Calendar />     
             <h1>Schedule a Raid</h1>
             <form onSubmit={handleSubmit}>
                 <table cellSpacing="10">
@@ -74,10 +72,7 @@ function Event() {
                     </tbody>
                 </table>
             </form>
-        </div>
             </Col>
-
-
 
         </Row>
         </Container>
@@ -85,4 +80,4 @@ function Event() {
     )
 }
 
-export default Event;
+// export default NewEvent;

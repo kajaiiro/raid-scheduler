@@ -6,8 +6,8 @@ import Router from './Router';
 // import Layout from './components/Layout/Layout';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Navigation from "./components/Layout/Navbar/Navbar"
-import Footer from "./components/Layout/Footer/Footer"
+import Navigation from "./components/Layout/Navbar"
+import Footer from "./components/Layout/Footer"
 
 
 ReactDOM.render(
