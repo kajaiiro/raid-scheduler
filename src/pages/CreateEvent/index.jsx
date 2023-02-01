@@ -3,8 +3,8 @@ import 'react-calendar/dist/Calendar.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import React, { useState } from 'react';
 import axios from 'axios';
-import { React, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 
@@ -81,5 +81,3 @@ export default function NewEvent() {
         </Container>
     );
 }
-
-// export default NewEvent;
