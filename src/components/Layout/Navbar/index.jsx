@@ -7,10 +7,12 @@ import { Link } from 'react-router-dom';
 
 export default function Navigation() {
     return (
-        <Navbar>
-            <Container>
+        <Container>
+            <Navbar>
                 <Navbar.Brand>
-                    <Link to="/">Raid-scheduler</Link>
+                    <Link to="/" className="navbar-header">
+                        Raid Scheduler
+                    </Link>
                 </Navbar.Brand>
                 <Nav className="me-auto">
                     <Nav.Link>
@@ -22,7 +24,7 @@ export default function Navigation() {
                         <Link to="/login">Log In</Link>
                     </Nav.Link>
                 </Nav>
-            </Container>
-        </Navbar>
+            </Navbar>
+        </Container>
     );
 }

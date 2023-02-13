@@ -1,14 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Route, Routes } from 'react-router-dom';
 import React from 'react';
-import Event from './pages/Event';
-import NotFound from './pages/NotFound';
-import Home from './pages/Home';
-import Register from './pages/Register';
-import Login from './pages/Login';
+import { Route, Routes } from 'react-router-dom';
 import CreateEvent from './pages/CreateEvent';
-import UpdateEvent from './pages/UpdateEvent';
+import Event from './pages/Event';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import NotFound from './pages/NotFound';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import Register from './pages/Register';
+import UpdateEvent from './pages/UpdateEvent';
 
 export default function Router() {
     return (

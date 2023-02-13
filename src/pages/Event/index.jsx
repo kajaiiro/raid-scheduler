@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Table from 'react-bootstrap/Table';
+import { Link } from 'react-router-dom';
 
 export default function Event() {
     const [users, setUsers] = useState([]);
-
+    const url = 'https://raidscheduler.online';
     function getUsers() {
         axios
-            .get('https://raidscheduler.online/api/users')
+            .get(`${url}/api/users`)
             .then((response) => {
                 console.warn(response.data); //eslint-disable-line
                 setUsers(response.data);
@@ -30,7 +30,7 @@ export default function Event() {
     // Use axios to delete data and run getUsers function to update the list
     const deleteUser = (id) => {
         axios
-            .delete(`https://raidscheduler.online/api/user/${id}`)
+            .delete(`${url}/api/user/${id}`)
             .then((response) => {
                 console.warn(response.data); //eslint-disable-line
                 getUsers();

@@ -1,12 +1,12 @@
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+import axios from 'axios';
+import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import React, { useState } from 'react';
-import axios from 'axios';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 import { useNavigate } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
 
 export default function NewEvent() {
     const navigate = useNavigate();
