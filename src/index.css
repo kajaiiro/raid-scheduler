@@ -1,46 +1,54 @@
-
-/* 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+h1,
+h2,
+h3,
+h4,
+.navbar-header {
+    font-family: 'Cambria', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+p {
+    font-family: 'Meiryo', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
-*/
+
+a,
+label {
+    font-family: 'Franklin Gothic Book', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
 /* reset */
 
-*, *::before, *::after {
-  box-sizing: border-box;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  font: inherit;
+    margin: 0;
+    padding: 0;
+    font: inherit;
 }
 
-html {
-  color-scheme: dark light;
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
 }
 
-body {
-  min-height: 100vh;
+/*  */
+a:link {
+    text-decoration: none;
 }
 
-img, picture, svg, video {
-  display: block;
-  max-width: 100%;
+a:hover {
+    text-decoration: underline;
+    background-color: lightgray;
 }
-/* 
-input, textarea, button, select {
-  font: inherit;
-}
- */
