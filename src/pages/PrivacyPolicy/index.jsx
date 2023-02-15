@@ -534,10 +534,8 @@ export default function PrivacyPolicy() {
             </p>
             <ul>
                 <li>
-                    By visiting this page on our website:{' '}
-                    <a href="raidscheduler.online/contact">
-                        raidscheduler.online/contact
-                    </a>
+                    By sending us email to our address
+                    support@raidscheduler.online
                 </li>
             </ul>
         </Container>

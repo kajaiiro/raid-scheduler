@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import About from './pages/About';
 import CreateEvent from './pages/CreateEvent';
 import Event from './pages/Event';
 import Home from './pages/Home';
@@ -20,6 +21,7 @@ export default function Router() {
             <Route path="/event/:id/edit" element={<UpdateEvent />} />
             <Route path="*" element={<NotFound />} />
             <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+            <Route path="/about" element={<About />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
         </Routes>
