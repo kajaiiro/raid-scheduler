@@ -8,20 +8,29 @@ import 'react-calendar/dist/Calendar.css';
 import { useNavigate } from 'react-router-dom';
 
 export default function NewEvent() {
+    // Allow component to navigate to another page using React Router
     const navigate = useNavigate();
 
+    // State hook to store values
     const [inputs, setInputs] = useState([]);
 
+    // Handle changes in input values
     const handleChange = (event) => {
+        // Get the input fields triggers
         const { name } = event.target;
         const { value } = event.target;
+        // Update the state hook with new values
         setInputs((values) => ({ ...values, [name]: value }));
     };
 
+    // Handle form submission
     const handleSubmit = (event) => {
+        // Prevent the default form submission behavior
         event.preventDefault();
+        // Send post request to the server. With user input values
         axios
             .post('https://raidscheduler.online/api/users', inputs)
+            // Once the request is done, log it and navigate to the another page
             .then((response) => {
                 console.log(response.data); //eslint-disable-line
                 navigate('/event');

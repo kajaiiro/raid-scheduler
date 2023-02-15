@@ -8,26 +8,30 @@ import Table from 'react-bootstrap/Table';
 import { Link } from 'react-router-dom';
 
 export default function Event() {
+    // State hook to store values
     const [users, setUsers] = useState([]);
+
     const url = 'https://raidscheduler.online';
+
+    // Prepare function what makes a GET request, to get list of users
     function getUsers() {
         axios
             .get(`${url}/api/users`)
             .then((response) => {
                 console.warn(response.data); //eslint-disable-line
+                // Update the state hook with new values
                 setUsers(response.data);
             })
             .catch((error) => {
                 console.error(error); //eslint-disable-line
             });
     }
-
-    // drive getUsers() once
+    // hook to call function when component is mounted
     useEffect(() => {
         getUsers();
-    }, []); // Empty array to stop refresh
+    }, []);
 
-    // Use axios to delete data and run getUsers function to update the list
+    // Prepare function what makes a DELETE request, to remove used
     const deleteUser = (id) => {
         axios
             .delete(`${url}/api/user/${id}`)

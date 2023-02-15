@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// navigation links in a row and copyright mark under
 export default function Footer() {
     return (
         <div className="container">

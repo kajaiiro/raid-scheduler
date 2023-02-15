@@ -1,6 +1,8 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 
+// Simple about page
+// Link to favicon
 export default function About() {
     return (
         <Container className="text-center">

@@ -2,9 +2,9 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-
 import { Link } from 'react-router-dom';
 
+// Navigation, brand link on left, Calendar and Log in separated by space. Left and right
 export default function Navigation() {
     return (
         <Container>

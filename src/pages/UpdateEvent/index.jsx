@@ -5,12 +5,16 @@ import Container from 'react-bootstrap/Container';
 import { useNavigate, useParams } from 'react-router-dom';
 
 export default function EditEvent() {
+    // Allow component to navigate to another page using React Router
     const navigate = useNavigate();
 
+    // State hook to store values
     const [inputs, setInputs] = useState([]);
 
+    // Extract parameter from current route
     const { id } = useParams();
 
+    // Prepare function what makes a GET request, to retrieve user
     function getUser() {
         axios
             .get(`https://raidscheduler.online/api/user/${id}`)
@@ -20,20 +24,26 @@ export default function EditEvent() {
             });
     }
 
+    // hook to call function when component is mounted
     useEffect(() => {
         getUser();
     }, []);
 
     const handleChange = (event) => {
+        // Get the input fields triggers
         const { name } = event.target;
         const { value } = event.target;
+        // Update the state hook with new values
         setInputs((values) => ({ ...values, [name]: value }));
     };
+    // Handle form submission
     const handleSubmit = (event) => {
+        // Prevent the default form submission behavior
         event.preventDefault();
 
         axios
             .put(`https://raidscheduler.online/api/user/${id}`, inputs)
+            // Once the request is done, log it and navigate to the another page
             .then((response) => {
                 console.log(response.data); //eslint-disable-line
                 navigate('/event');
