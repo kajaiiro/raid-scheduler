@@ -27,9 +27,9 @@ export default function NewEvent() {
     const handleSubmit = (event) => {
         // Prevent the default form submission behavior
         event.preventDefault();
-        // Send post request to the server. With user input values
+        // Send post request to the server. With event input values
         axios
-            .post('https://raidscheduler.online/api/users', inputs)
+            .post('https://raidscheduler.online/api/events', inputs)
             // Once the request is done, log it and navigate to the another page
             .then((response) => {
                 console.log(response.data); //eslint-disable-line

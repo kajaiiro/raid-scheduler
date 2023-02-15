@@ -14,10 +14,10 @@ export default function EditEvent() {
     // Extract parameter from current route
     const { id } = useParams();
 
-    // Prepare function what makes a GET request, to retrieve user
-    function getUser() {
+    // Prepare function what makes a GET request, to retrieve event
+    function getEvent() {
         axios
-            .get(`https://raidscheduler.online/api/user/${id}`)
+            .get(`https://raidscheduler.online/api/event/${id}`)
             .then((response) => {
                 console.table(response.data); //eslint-disable-line
                 setInputs(response.data);
@@ -26,7 +26,7 @@ export default function EditEvent() {
 
     // hook to call function when component is mounted
     useEffect(() => {
-        getUser();
+        getEvent();
     }, []);
 
     const handleChange = (event) => {
@@ -42,7 +42,7 @@ export default function EditEvent() {
         event.preventDefault();
 
         axios
-            .put(`https://raidscheduler.online/api/user/${id}`, inputs)
+            .put(`https://raidscheduler.online/api/event/${id}`, inputs)
             // Once the request is done, log it and navigate to the another page
             .then((response) => {
                 console.log(response.data); //eslint-disable-line

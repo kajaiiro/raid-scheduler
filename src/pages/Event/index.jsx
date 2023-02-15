@@ -9,18 +9,18 @@ import { Link } from 'react-router-dom';
 
 export default function Event() {
     // State hook to store values
-    const [users, setUsers] = useState([]);
+    const [events, setEvents] = useState([]);
 
     const url = 'https://raidscheduler.online';
 
-    // Prepare function what makes a GET request, to get list of users
-    function getUsers() {
+    // Prepare function what makes a GET request, to get list of events
+    function getEvents() {
         axios
-            .get(`${url}/api/users`)
+            .get(`${url}/api/events`)
             .then((response) => {
                 console.warn(response.data); //eslint-disable-line
                 // Update the state hook with new values
-                setUsers(response.data);
+                setEvents(response.data);
             })
             .catch((error) => {
                 console.error(error); //eslint-disable-line
@@ -28,16 +28,16 @@ export default function Event() {
     }
     // hook to call function when component is mounted
     useEffect(() => {
-        getUsers();
+        getEvents();
     }, []);
 
     // Prepare function what makes a DELETE request, to remove used
-    const deleteUser = (id) => {
+    const deleteEvent = (id) => {
         axios
-            .delete(`${url}/api/user/${id}`)
+            .delete(`${url}/api/event/${id}`)
             .then((response) => {
                 console.warn(response.data); //eslint-disable-line
-                getUsers();
+                getEvents();
             })
             .catch((error) => {
                 console.error(error); //eslint-disable-line
@@ -66,23 +66,25 @@ export default function Event() {
                             </tr>
                         </thead>
                         <tbody>
-                            {users.map((user) => (
-                                <tr key={user.index}>
-                                    <td>{user.id}</td>
-                                    <td>{user.name}</td>
-                                    {/* <td>{user.email}</td> */}
-                                    <td>{user.created_at}</td>
-                                    <td>{`${user.mobile} / 8`}</td>
+                            {events.map((event) => (
+                                <tr key={event.index}>
+                                    <td>{event.id}</td>
+                                    <td>{event.name}</td>
+                                    <td>{event.email}</td>
+                                    {/* <td>{event.created_at}</td>   */}
+                                    <td>{`${event.mobile} / 8`}</td>
                                     <td>
                                         <Link
-                                            to={`${user.id}/edit`}
+                                            to={`${event.id}/edit`}
                                             style={{ marginRight: '10px' }}
                                         >
                                             Edit
                                         </Link>
                                         <Button
                                             variant="danger"
-                                            onClick={() => deleteUser(user.id)}
+                                            onClick={() =>
+                                                deleteEvent(event.id)
+                                            }
                                         >
                                             Delete
                                         </Button>
