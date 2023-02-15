@@ -4,7 +4,6 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -33,44 +32,58 @@ export default function NewEvent() {
         <Container>
             <Row>
                 <Col>
-                    <Calendar />
+                    {/* <Calendar /> */}
                     <h1>Schedule a Raid</h1>
                     <form onSubmit={handleSubmit}>
+                        {' '}
+                        {/* eslint-disable jsx-a11y/label-has-associated-control */}
                         <table cellSpacing="10">
                             <tbody>
                                 <tr>
-                                    <th>Group:</th>
+                                    <td>
+                                        <label htmlFor="name">Group:</label>
+                                    </td>
                                     <td>
                                         <input
+                                            value={inputs.name}
                                             type="text"
                                             name="name"
+                                            id="name"
                                             onChange={handleChange}
                                         />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>Date:</th>
+                                    <td>
+                                        <label htmlFor="email">Date:</label>
+                                    </td>
                                     <td>
                                         <input
+                                            value={inputs.email}
                                             type="text"
                                             name="email"
+                                            id="email"
                                             onChange={handleChange}
                                         />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>Status:</th>
+                                    <td>
+                                        <label htmlFor="mobile">Status:</label>
+                                    </td>
                                     <td>
                                         <input
+                                            value={inputs.mobile}
                                             type="text"
                                             name="mobile"
+                                            id="mobile"
                                             onChange={handleChange}
                                         />
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colSpan="2" align="right">
-                                        <Button>Save</Button>
+                                        <Button type="submit">Save</Button>
                                     </td>
                                 </tr>
                             </tbody>

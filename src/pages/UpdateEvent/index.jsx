@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
 import { useNavigate, useParams } from 'react-router-dom';
 
 export default function EditEvent() {
@@ -40,7 +41,7 @@ export default function EditEvent() {
     };
 
     return (
-        <div>
+        <Container>
             <h1>Edit Event</h1>
             <form onSubmit={handleSubmit}>
                 <table cellSpacing="10">
@@ -80,12 +81,12 @@ export default function EditEvent() {
                         </tr>
                         <tr>
                             <td colSpan="2" align="right">
-                                <Button>Save</Button>
+                                <Button type="submit">Save</Button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </form>
-        </div>
+        </Container>
     );
 }
