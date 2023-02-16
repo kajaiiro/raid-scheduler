@@ -69,10 +69,10 @@ export default function Event() {
                             {events.map((event) => (
                                 <tr key={event.index}>
                                     <td>{event.id}</td>
-                                    <td>{event.name}</td>
-                                    <td>{event.email}</td>
+                                    <td>{event.group}</td>
+                                    <td>{event.date}</td>
                                     {/* <td>{event.created_at}</td>   */}
-                                    <td>{`${event.mobile} / 8`}</td>
+                                    <td>{`${event.status} / 8`}</td>
                                     <td>
                                         <Link
                                             to={`${event.id}/edit`}

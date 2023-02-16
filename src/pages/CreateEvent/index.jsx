@@ -50,42 +50,42 @@ export default function NewEvent() {
                             <tbody>
                                 <tr>
                                     <td>
-                                        <label htmlFor="name">Group:</label>
+                                        <label htmlFor="group">Group:</label>
                                     </td>
                                     <td>
                                         <input
-                                            value={inputs.name}
+                                            value={inputs.group}
                                             type="text"
-                                            name="name"
-                                            id="name"
+                                            name="group"
+                                            id="group"
                                             onChange={handleChange}
                                         />
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <label htmlFor="email">Date:</label>
+                                        <label htmlFor="date">Date:</label>
                                     </td>
                                     <td>
                                         <input
-                                            value={inputs.email}
+                                            value={inputs.date}
                                             type="text"
-                                            name="email"
-                                            id="email"
+                                            name="date"
+                                            id="date"
                                             onChange={handleChange}
                                         />
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <label htmlFor="mobile">Status:</label>
+                                        <label htmlFor="status">Status:</label>
                                     </td>
                                     <td>
                                         <input
-                                            value={inputs.mobile}
+                                            value={inputs.status}
                                             type="text"
-                                            name="mobile"
-                                            id="mobile"
+                                            name="status"
+                                            id="status"
                                             onChange={handleChange}
                                         />
                                     </td>

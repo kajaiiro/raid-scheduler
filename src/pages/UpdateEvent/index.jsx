@@ -60,9 +60,9 @@ export default function EditEvent() {
                             <th>Group:</th>
                             <td>
                                 <input
-                                    value={inputs.name}
+                                    value={inputs.group}
                                     type="text"
-                                    name="name"
+                                    name="group"
                                     onChange={handleChange}
                                 />
                             </td>
@@ -71,9 +71,9 @@ export default function EditEvent() {
                             <th>Date:</th>
                             <td>
                                 <input
-                                    value={inputs.email}
+                                    value={inputs.date}
                                     type="text"
-                                    name="email"
+                                    name="date"
                                     onChange={handleChange}
                                 />
                             </td>
@@ -82,9 +82,9 @@ export default function EditEvent() {
                             <th>Status:</th>
                             <td>
                                 <input
-                                    value={inputs.mobile}
+                                    value={inputs.status}
                                     type="text"
-                                    name="mobile"
+                                    name="status"
                                     onChange={handleChange}
                                 />
                             </td>
